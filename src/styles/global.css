@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/fraunces-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+}
+
+:root {
+  --paper: #f4efe6;
+  --paper-sunk: #e8e1d4;
+  --ink: #191714;
+  --ink-muted: #5a554b;
+  --rule: rgba(25, 23, 20, 0.14);
+  --accent: #a63d24;
+  --signal-ok: #3f6b4a;
+  --signal-warn: #8a6414;
+  --signal-stop: #8c2f2f;
+  --stage: #12110e;
+  color-scheme: light;
+}
+
+html {
+  background-color: var(--paper);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .folio {
+    @apply mx-auto w-full max-w-folio px-5 sm:px-8 lg:px-10;
+  }
+
+  .rule {
+    border-top: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    @apply text-2xs font-semibold uppercase tracking-[0.18em] text-ink-muted;
+  }
+
+  .display {
+    font-family: Fraunces, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+    outline-color: var(--accent);
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border px-5 py-2.5 text-sm font-semibold transition-colors duration-120 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn border-ink bg-ink text-paper hover:bg-[#332f28];
+  }
+
+  .btn-quiet {
+    @apply btn border-[color:var(--rule)] bg-transparent text-ink hover:border-ink;
+  }
+
+  .field {
+    @apply w-full border border-[color:var(--rule)] bg-paper px-3 py-2 text-base text-ink;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

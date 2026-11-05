@@ -1,0 +1,41 @@
+node_modules/
+dist/
+dist-ssr/
+coverage/
+*.local
+npm-install.log
+
+# raw and processed datasets are never committed
+data/raw/
+data/processed/
+# optional top-level export directory (the web artifacts in public/models
+# are committed on purpose so Vercel can serve them)
+/models/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# generated at install time by scripts/copy-assets.mjs
+public/mediapipe/wasm/
+
+# playwright
+test-results/
+playwright-report/
+blob-report/
+probe.png
+probe.tmp.mjs
+
+# generated e2e fixture (see e2e/global-setup.ts)
+tests/fixtures/hand-A.mjpeg
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+
+# temporary visual QA screenshots
+shots/
