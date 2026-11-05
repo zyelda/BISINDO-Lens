@@ -2,6 +2,8 @@
 
 BISINDO Lens adalah prototipe web untuk latihan membaca abjad **BISINDO (Bahasa Isyarat Indonesia) A–Z** secara real-time dari kamera. MediaPipe Hand Landmarker mengambil 21 titik sendi tangan, lalu sebuah Random Forest yang diekspor ke ONNX mengklasifikasikan bentuk tangan menjadi 26 huruf.
 
+**Demo:** https://bisindo-lens.vercel.app
+
 Semua pemrosesan gambar terjadi **di browser**. Tidak ada frame kamera yang dikirim ke server, tidak ada backend saat runtime, dan model disajikan sebagai berkas statis dari origin yang sama.
 
 > Ini alat bantu latihan, bukan penerjemah bahasa isyarat dan bukan pengganti belajar dengan penutur asli. BISINDO memiliki variasi regional yang tidak ditangkap oleh klasifikasi abjad statis.
